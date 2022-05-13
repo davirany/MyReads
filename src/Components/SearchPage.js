@@ -103,7 +103,7 @@ render() {
             {
               results.error === "empty query" &&
               <div className="no-results-div"> 
-                  <p>No Results </p>
+                  <p>Empty Search</p>
               </div>
             }
         </div>
