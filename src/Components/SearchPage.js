@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import * as BooksAPI from '../BooksAPI'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 export default class SearchPage extends Component {
 static propTypes = {
@@ -45,11 +46,11 @@ render() {
   return (
     <div className="search-books">
       <div className="search-books-bar">
-        {/* <Link
+        <Link
           className='close-search'
           to='/'>
           Close
-        </Link> */}
+        </Link>
         <div className="search-books-input-wrapper">
           <input type="text" placeholder="Search by title or author" onChange={(event) => this.searchBooks(event.target.value)}/>
         </div>
