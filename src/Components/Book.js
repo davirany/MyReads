@@ -17,7 +17,7 @@ export default class Book extends Component {
                         {
                         book.imageLinks !== undefined ?
                         <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: 'url( ' + book.imageLinks.thumbnail + ')' }}></div>
-                        : <div className="book-cover" style={{ width: 128, height: 193, background: 'gray' }}></div>
+                        : <div className="book-cover" style={{ width: 128, height: 193, background: '#60ac5d',cursor:'help' }}></div>
                         }
                         <div className="book-shelf-changer">
                             <select onChange = {(e) => onUpdateShelf(book, e.target.value)} value={ book.shelf }>
@@ -41,7 +41,5 @@ export default class Book extends Component {
                 </div>
             </li>
         )
-
     }
-
 }

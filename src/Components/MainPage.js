@@ -28,6 +28,22 @@ export default class MainPage extends Component {
                     </div>
                     <div className="list-books-content">
                         <div>
+                        { wantToRead.length > 0 &&
+                            <div className="bookshelf">
+                                <h2 className="bookshelf-title">Read</h2>
+                                <div className="bookshelf-books">
+                                    <ol className="books-grid">
+                                    { read.map((book) => (
+                                        <Book
+                                            key = {book.id}
+                                            book = {book}
+                                            onUpdateShelf = {onUpdateShelf}
+                                        />
+                                    ))} 
+                                    </ol>
+                                </div>
+                            </div>
+                        }
                             { currentlyReading.length > 0 &&
                             <div className="bookshelf">
                                 <h2 className="bookshelf-title">Currently Reading</h2>
@@ -39,7 +55,7 @@ export default class MainPage extends Component {
                                             book={book}
                                             onUpdateShelf={onUpdateShelf}
                                         />
-                                        ))} 
+                                        ))}
                                     </ol>
                                 </div>
                             </div>
@@ -56,22 +72,6 @@ export default class MainPage extends Component {
                                             onUpdateShelf={onUpdateShelf}
                                         />
                                         ))} 
-                                    </ol>
-                                </div>
-                            </div>
-                            }
-                            { wantToRead.length > 0 &&
-                            <div className="bookshelf">
-                                <h2 className="bookshelf-title">Read</h2>
-                                <div className="bookshelf-books">
-                                    <ol className="books-grid">
-                                    { read.map((book) => (
-                                        <Book
-                                            key = {book.id}
-                                            book = {book}
-                                            onUpdateShelf = {onUpdateShelf}
-                                        />
-                                    ))} 
                                     </ol>
                                 </div>
                             </div>

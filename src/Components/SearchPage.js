@@ -32,7 +32,7 @@ searchBooks = (query) => {
   if(query.trim().length > 0){
       BooksAPI.search(query)
       .then((results) => {
-          this.updateResult(results) 
+        this.updateResult(results) 
       })
   }else{
       this.updateResult([]) 
@@ -40,8 +40,8 @@ searchBooks = (query) => {
 }
 
 render() {
-  const { onUpdateShelf, books } = this.props
   const { results, query } = this.state     
+  const { onUpdateShelf, books } = this.props
 
   return (
     <div className="search-books">
@@ -72,10 +72,8 @@ render() {
                     <div className="book-shelf-changer">
                       <select 
                           onChange = {(e) => onUpdateShelf(book, e.target.value)} 
-                          value = {
-                            books.findIndex(x => x.id === book.id) >= 0 
-                            ? books[books.findIndex(x => x.id === book.id)].shelf 
-                            : 'none'
+                          value = {books.findIndex(x => x.id === book.id) >= 0 
+                            ? books[books.findIndex(x => x.id === book.id)].shelf : 'none'
                           }
                           >
                           <option value="move" disabled>Move to...</option>
@@ -100,14 +98,14 @@ render() {
             ))
           }
         </ol>
-            {
-              results.error === "empty query" &&
-              <div className="no-results-div"> 
-                  <p>Empty Search</p>
-              </div>
-            }
-        </div>
+        {
+          results.error === "empty query" &&
+          <div className="no-results-div"> 
+              <p>Empty Search</p>
+          </div>
+        }
       </div>
+    </div>
   )
 }
 }
