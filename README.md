@@ -8,3 +8,9 @@ if you prefer use the yarn package manager, use this code:
 *npm install --global yarn*
 
 After installing the *npm* (or *yarn*), all you need to do is start the project, using the *npm start* or *yarn start*
+
+Here's an example of how should the app render:
+=>**Main Page**
+![](.github/MyReads_MainPage.png)
+=>**Search Page**
+![](.github/MyReads_SearchPage.png)
