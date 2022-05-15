@@ -52,7 +52,7 @@ export default class SearchPage extends Component {
             <input
               type="text"
               placeholder="Search by title or author"
-              onChange={(event) => this.searchBooks(event.target.value)}
+              onChange={(e) => this.searchBooks(e.target.value)}
             />
           </div>
         </div>
@@ -107,12 +107,7 @@ export default class SearchPage extends Component {
                       </div>
                     </div>
                     <div className="book-title">{book.title}</div>
-                    <div className="book-authors">
-                      {book.authors !== undefined &&
-                        book.authors.map((author, i) =>
-                          book.authors.length - 1 !== i ? author + ", " : author
-                        )}
-                    </div>
+                    <div className="book-authors">{book.authors}</div>
                   </div>
                 </li>
               ))}
