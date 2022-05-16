@@ -1,8 +1,6 @@
 import React from "react";
-import Camelize from "../utils/Camelize";
 
 export default function BookShelf(props) {
-  const camalized = Camelize(props.shelfTitle);
   return (
     camalized.length > 0 && (
       <div className="bookshelf">
